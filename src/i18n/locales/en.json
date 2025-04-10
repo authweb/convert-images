@@ -14,7 +14,9 @@
       "empty": "No images selected",
       "add": "Add more",
       "selectAll": "Select all",
-      "delete": "Delete"
+      "delete": "Delete",
+      "clearSelection": "Clear selection",
+      "deleteAll": "Delete all"
     },
     "settings": {
       "title": "Conversion Settings",
