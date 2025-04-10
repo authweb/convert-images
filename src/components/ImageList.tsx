@@ -6,7 +6,7 @@ import { DownloadPanel } from './DownloadPanel';
 import { NotificationContainer, NotificationItem } from './NotificationContainer';
 import { convertImage } from '../utils/imageConverter';
 import { ImageSettings, Image, ConvertProgress } from '../types';
-import { FiUpload, FiMaximize, FiMinimize } from 'react-icons/fi';
+import { FiCheck, FiPlus, FiTrash, FiDownload, FiLoader, FiUpload } from 'react-icons/fi';
 import { useTranslation } from 'react-i18next';
 import { LanguageSwitcher } from './LanguageSwitcher';
 
@@ -242,7 +242,7 @@ export const ImageList: React.FC = () => {
         <div className="fixed inset-0 bg-purple-500/10 backdrop-blur-md z-[60] flex items-center justify-center">
           <div className="bg-[#232936]/90 rounded-2xl p-8 max-w-2xl w-full mx-4 text-center border-2 border-dashed border-purple-500/50">
             <div className="w-20 h-20 rounded-xl bg-purple-500/20 flex items-center justify-center mx-auto mb-4">
-              <FiUpload className="w-10 h-10 text-purple-400" />
+              <FiPlus className="w-10 h-10 text-purple-400" />
             </div>
             <h3 className="text-2xl font-medium text-white mb-2">
               {t('app.dropzone.drop')}
@@ -277,7 +277,7 @@ export const ImageList: React.FC = () => {
               onChange={handleFileSelect}
               aria-label={t('app.dropzone.select')}
             />
-            <FiUpload className="mx-auto h-10 w-10 sm:h-12 sm:w-12 text-purple-500" />
+            <FiPlus className="mx-auto h-10 w-10 sm:h-12 sm:w-12 text-purple-500" />
             <button
               onClick={() => fileInputRef.current?.click()}
               className="mt-4 text-base sm:text-lg font-medium text-gray-300 hover:text-white transition-colors"
@@ -401,53 +401,47 @@ export const ImageList: React.FC = () => {
                     </div>
                   )}
 
-                  <div className="space-y-4 mb-4">
-                    <div className="flex items-center justify-between">
-                      <label className="block text-sm font-medium text-gray-300">
-                        {t('app.settings.dimensions.title')}:
-                      </label>
-                      <button
-                        onClick={() => handleSettingsChange({ maintainAspectRatio: !settings.maintainAspectRatio })}
-                        className="text-sm text-purple-400 hover:text-purple-300 transition-colors flex items-center gap-1"
-                      >
-                        {settings.maintainAspectRatio ? (
-                          <>
-                            <FiMaximize className="w-4 h-4" />
-                            {t('app.settings.dimensions.keepAspectRatio')}
-                          </>
-                        ) : (
-                          <>
-                            <FiMinimize className="w-4 h-4" />
-                            {t('app.settings.dimensions.freeAspectRatio')}
-                          </>
-                        )}
-                      </button>
-                    </div>
-                    <div className="grid grid-cols-2 gap-4">
+                  <div className="mb-6">
+                    <h3 className="text-sm font-medium text-gray-300 mb-2">
+                      {t('app.settings.dimensions')}
+                      <span className="ml-2">
+                        <label className="inline-flex items-center cursor-pointer">
+                          <input
+                            type="checkbox"
+                            checked={settings.maintainAspectRatio}
+                            onChange={(e) => handleSettingsChange({ maintainAspectRatio: e.target.checked })}
+                            className="sr-only peer"
+                          />
+                          <div className="relative w-9 h-5 bg-gray-700 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-purple-600"></div>
+                          <span className="ml-2 text-xs text-gray-400">
+                            {t('app.settings.maintainAspect')}
+                          </span>
+                        </label>
+                      </span>
+                    </h3>
+                    <div className="grid grid-cols-2 gap-3">
                       <div>
-                        <label className="block text-sm font-medium text-gray-300 mb-2" htmlFor="width-input">
-                          {t('app.settings.dimensions.width')}:
+                        <label className="block text-xs text-gray-400 mb-1">
+                          {t('app.settings.width')}
                         </label>
                         <input
-                          id="width-input"
-                          type="number"
+                          type="text"
+                          placeholder={t('app.settings.auto')}
                           value={settings.width || ''}
                           onChange={(e) => handleSettingsChange({ width: e.target.value ? parseInt(e.target.value, 10) : undefined })}
-                          placeholder={t('app.settings.dimensions.auto')}
-                          className="w-full rounded-lg bg-[#1a1f2b] border border-gray-600 text-gray-300 px-3 py-2 focus:border-purple-500 focus:ring focus:ring-purple-500/20 transition-all"
+                          className="block w-full px-3 py-2 bg-[#232936] border border-gray-700 rounded-lg text-sm text-white placeholder-gray-500 focus:outline-none focus:border-purple-500"
                         />
                       </div>
                       <div>
-                        <label className="block text-sm font-medium text-gray-300 mb-2" htmlFor="height-input">
-                          {t('app.settings.dimensions.height')}:
+                        <label className="block text-xs text-gray-400 mb-1">
+                          {t('app.settings.height')}
                         </label>
                         <input
-                          id="height-input"
-                          type="number"
+                          type="text"
+                          placeholder={t('app.settings.auto')}
                           value={settings.height || ''}
                           onChange={(e) => handleSettingsChange({ height: e.target.value ? parseInt(e.target.value, 10) : undefined })}
-                          placeholder={t('app.settings.dimensions.auto')}
-                          className="w-full rounded-lg bg-[#1a1f2b] border border-gray-600 text-gray-300 px-3 py-2 focus:border-purple-500 focus:ring focus:ring-purple-500/20 transition-all"
+                          className="block w-full px-3 py-2 bg-[#232936] border border-gray-700 rounded-lg text-sm text-white placeholder-gray-500 focus:outline-none focus:border-purple-500"
                         />
                       </div>
                     </div>
