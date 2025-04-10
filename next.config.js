@@ -6,7 +6,7 @@ const nextConfig = {
     unoptimized: true,
   },
   basePath: process.env.NODE_ENV === 'production' ? '/convert-images' : '',
-  distDir: 'build',
+  distDir: 'out',
 };
 
 module.exports = nextConfig;
