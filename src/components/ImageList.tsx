@@ -31,6 +31,7 @@ export const ImageList: React.FC = () => {
   const [isConverting, setIsConverting] = useState<Record<string, boolean>>({});
   const [settings, setSettings] = useState<ImageSettings>(defaultSettings);
   const [showDownloadPanel, setShowDownloadPanel] = useState(false);
+  const [imagesToDownload, setImagesToDownload] = useState<ImageWithCrop[]>([]);
   const [notifications, setNotifications] = useState<NotificationItem[]>([]);
   const fileInputRef = useRef<HTMLInputElement>(null);
 
@@ -221,6 +222,13 @@ export const ImageList: React.FC = () => {
     for (const image of imagesToConvert) {
       await handleConvert(image.id);
     }
+    
+    // После конвертации обновляем массив изображений из текущего состояния
+    const updatedImages = images.filter(img => 
+      imagesToConvert.some(convertedImg => convertedImg.id === img.id)
+    );
+    
+    setImagesToDownload(updatedImages);
     setShowDownloadPanel(true);
   }, [images, handleConvert]);
 
@@ -235,6 +243,16 @@ export const ImageList: React.FC = () => {
   }, [handleSettingsChange]);
 
   const hasConvertedImages = images.some(img => img.convertedUrl);
+
+  const handleShowDownloads = useCallback(() => {
+    const selectedImages = images.filter(img => img.selected && img.convertedUrl);
+    const imagesToShow = selectedImages.length > 0 
+      ? selectedImages 
+      : images.filter(img => img.convertedUrl);
+    
+    setImagesToDownload(imagesToShow);
+    setShowDownloadPanel(true);
+  }, [images]);
 
   return (
     <div className="bg-[#151821] text-white p-4 sm:p-6 rounded-xl">
@@ -464,7 +482,7 @@ export const ImageList: React.FC = () => {
                     
                     {hasConvertedImages && (
                       <button
-                        onClick={() => setShowDownloadPanel(true)}
+                        onClick={handleShowDownloads}
                         className="w-full rounded-lg px-4 py-2.5 sm:py-3 font-medium text-white transition-all bg-[#1a1f2b] hover:bg-[#2a2f3b] border border-purple-500/30"
                       >
                         {t('app.actions.showDownloads')}
@@ -479,7 +497,7 @@ export const ImageList: React.FC = () => {
       </div>
       {showDownloadPanel && (
         <DownloadPanel
-          images={images}
+          images={imagesToDownload}
           onClose={() => setShowDownloadPanel(false)}
           onFilesAdd={handleFiles}
         />
