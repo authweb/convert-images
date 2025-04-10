@@ -1,3 +1,5 @@
+'use client';
+
 import React, { useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 
@@ -6,6 +8,14 @@ export const LanguageSwitcher: React.FC = () => {
 
   const toggleLanguage = useCallback(() => {
     const newLang = i18n.language === 'ru' ? 'en' : 'ru';
+    
+    // Сохраняем выбранный язык в localStorage
+    try {
+      localStorage.setItem('i18nextLng', newLang);
+    } catch (e) {
+      console.error('Failed to save language preference', e);
+    }
+    
     i18n.changeLanguage(newLang).catch(console.error);
   }, [i18n]);
 
