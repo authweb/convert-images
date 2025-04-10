@@ -6,7 +6,7 @@ import { DownloadPanel } from './DownloadPanel';
 import { NotificationContainer, NotificationItem } from './NotificationContainer';
 import { convertImage } from '../utils/imageConverter';
 import { ImageSettings, Image, ConvertProgress } from '../types';
-import { FiCheck, FiPlus, FiTrash, FiDownload, FiLoader, FiUpload } from 'react-icons/fi';
+import { FiPlus } from 'react-icons/fi';
 import { useTranslation } from 'react-i18next';
 import { LanguageSwitcher } from './LanguageSwitcher';
 
