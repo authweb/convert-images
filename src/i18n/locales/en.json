@@ -5,8 +5,9 @@
     "dropzone": {
       "select": "Select images or drop them here",
       "formats": "Supported formats: JPEG, PNG, WebP, HEIC",
-      "maxSize": "Max file size: 10MB",
-      "dropDescription": "Drop images here"
+      "maxSize": "Maximum file size: 10MB",
+      "dropDescription": "Drop images here",
+      "drop": "Drop images here"
     },
     "images": {
       "total": "Total",
@@ -29,7 +30,7 @@
       "auto": "Auto"
     },
     "actions": {
-      "convert": "Convert All",
+      "convert": "Convert all",
       "converting": "Converting...",
       "delete": "Delete",
       "select": "Select",
@@ -38,9 +39,9 @@
       "downloadZip": "Download as ZIP",
       "downloading": "Downloading...",
       "close": "Close",
-      "convertAll": "Convert All",
-      "convertSelected": "Convert Selected ({{count}})",
-      "showDownloads": "View Downloads"
+      "convertAll": "Convert all",
+      "convertSelected": "Convert selected ({{count}})",
+      "showDownloads": "View downloads"
     },
     "download": {
       "title": "Download Images",
