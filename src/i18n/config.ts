@@ -11,8 +11,9 @@ const resources = {
 
 // Определяем язык браузера
 const getBrowserLanguage = () => {
+  if (typeof window === 'undefined') return 'ru';
   const browserLang = navigator.language.split('-')[0];
-  return resources[browserLang as keyof typeof resources] ? browserLang : 'en';
+  return resources[browserLang as keyof typeof resources] ? browserLang : 'ru';
 };
 
 i18n
@@ -20,7 +21,7 @@ i18n
   .init({
     resources,
     lng: getBrowserLanguage(),
-    fallbackLng: 'en',
+    fallbackLng: 'ru',
     interpolation: {
       escapeValue: false,
     },

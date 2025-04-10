@@ -1,63 +1,65 @@
 {
   "app": {
     "title": "Image Converter",
-    "description": "Convert your images to different formats with ease. Simply drag and drop or select your images to get started.",
+    "description": "Convert images to different formats easily and quickly. Just drag and drop or select images to get started.",
     "dropzone": {
       "select": "Select images or drop them here",
-      "formats": "Supported formats: JPEG, PNG, WebP",
-      "addMore": "Add more images"
+      "formats": "Supported formats: JPEG, PNG, WebP, HEIC",
+      "maxSize": "Max file size: 10MB",
+      "dropDescription": "Drop images here"
     },
     "images": {
       "total": "Total",
       "selected": "Selected",
+      "empty": "No images selected",
+      "add": "Add more",
       "selectAll": "Select all",
-      "clearSelection": "Clear selection",
-      "deleteAll": "Delete all"
+      "delete": "Delete"
     },
     "settings": {
       "title": "Conversion Settings",
-      "format": "Format",
-      "quality": "Quality",
-      "dimensions": {
-        "title": "Dimensions",
-        "width": "Width",
-        "height": "Height",
-        "auto": "Auto",
-        "keepAspectRatio": "Keep aspect ratio",
-        "freeAspectRatio": "Free aspect ratio"
-      }
+      "format": "Convert to:",
+      "quality": "Quality:",
+      "dimensions": "Dimensions:",
+      "width": "Width:",
+      "height": "Height:",
+      "maintainAspect": "Maintain aspect ratio",
+      "auto": "Auto"
     },
     "actions": {
-      "convert": "Convert all",
+      "convert": "Convert All",
       "converting": "Converting...",
       "delete": "Delete",
-      "download": "Download",
+      "select": "Select",
+      "remove": "Remove",
       "downloadAll": "Download all",
       "downloadZip": "Download as ZIP",
       "downloading": "Downloading...",
-      "close": "Close"
+      "close": "Close",
+      "convertAll": "Convert All",
+      "convertSelected": "Convert Selected ({{count}})",
+      "showDownloads": "View Downloads"
     },
     "download": {
-      "readyToDownload": "ready to download",
-      "withErrors": "{{count}} with errors"
-    },
-    "notifications": {
-      "added": "Added {{count}} images",
-      "deleted": "Image deleted",
-      "deletedMultiple": "Deleted {{count}} images",
-      "allDeleted": "All images deleted",
-      "converted": "Image {{name}} successfully converted",
-      "conversionError": "Error converting {{name}}"
+      "title": "Download Images",
+      "ready": "Ready to download",
+      "downloadAll": "Download all",
+      "downloading": "Downloading...",
+      "downloadSingle": "Download image"
     },
     "validation": {
       "fileSize": "File size exceeds 10MB",
-      "format": "Unsupported file format",
-      "dimensions": {
-        "tooSmall": "Image is too small (minimum {{width}}x{{height}}px)",
-        "tooBig": "Image is too large (maximum {{width}}x{{height}}px)",
-        "unusual": "Unusual image proportions",
-        "webSize": "Large resolution for web use"
-      }
+      "fileType": "Unsupported file format",
+      "unknownError": "Unknown error"
+    },
+    "conversion": {
+      "error": "Conversion error: {{message}}",
+      "cancelled": "Conversion cancelled",
+      "alreadyInProgress": "Conversion already in progress"
+    },
+    "notifications": {
+      "added": "Image {{name}} added",
+      "converted": "Image {{name}} successfully converted"
     }
   }
 }
