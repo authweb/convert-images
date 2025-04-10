@@ -1,0 +1,78 @@
+{
+  "app": {
+    "title": "Image Converter",
+    "description": "Convert images to different formats easily and quickly. Just drag and drop or select images to get started.",
+    "dropzone": {
+      "select": "Select images or drop them here",
+      "drop": "Drop images here",
+      "dropDescription": "Drop your images in this area to upload",
+      "formats": "Supported formats: JPEG, PNG, WebP",
+      "addMore": "Add more images"
+    },
+    "images": {
+      "total": "Total",
+      "selected": "Selected",
+      "selectAll": "Select all",
+      "unselectAll": "Unselect all",
+      "clearSelection": "Clear selection",
+      "deleteAll": "Delete all"
+    },
+    "settings": {
+      "title": "Conversion Settings",
+      "format": "Convert to:",
+      "quality": "Quality:",
+      "dimensions": {
+        "title": "Dimensions",
+        "width": "Width",
+        "height": "Height",
+        "auto": "Auto",
+        "keepAspectRatio": "Keep aspect ratio",
+        "freeAspectRatio": "Free aspect ratio"
+      }
+    },
+    "actions": {
+      "convert": "Convert All",
+      "converting": "Converting...",
+      "delete": "Delete",
+      "download": "Download",
+      "downloadAll": "Download all",
+      "downloadZip": "Download as ZIP",
+      "downloading": "Downloading...",
+      "close": "Close",
+      "convertAll": "Convert All",
+      "convertSelected": "Convert Selected ({{count}})",
+      "showDownloads": "View Downloads"
+    },
+    "download": {
+      "title": "Download Images",
+      "ready": "ready to download",
+      "downloadAll": "Download all",
+      "downloading": "Downloading...",
+      "downloadSingle": "Download image",
+      "downloaded": "Downloaded",
+      "withErrors": "{{count}} with errors"
+    },
+    "validation": {
+      "fileSize": "File size exceeds 10MB",
+      "unsupportedFormat": "Unsupported file format",
+      "dimensions": {
+        "tooSmall": "Image is too small (minimum 10x10px)",
+        "tooBig": "Image is too large (maximum 8000x8000px)",
+        "unusual": "Unusual image proportions",
+        "webSize": "Large resolution for web use"
+      }
+    },
+    "conversion": {
+      "cancelled": "Conversion cancelled",
+      "error": "Conversion error: {{message}}"
+    },
+    "notifications": {
+      "added": "Added {{count}} images",
+      "deleted": "Image deleted",
+      "deletedMultiple": "Deleted {{count}} images",
+      "allDeleted": "All images deleted",
+      "converted": "Image {{name}} successfully converted",
+      "conversionError": "Error converting {{name}}"
+    }
+  }
+}

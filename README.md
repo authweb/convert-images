@@ -1,36 +1,48 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Image Converter
 
-## Getting Started
+Web приложение для конвертации изображений в различные форматы.
 
-First, run the development server:
+## Возможности
+
+- Конвертация изображений в форматы JPEG, PNG и WebP
+- Настройка качества изображения
+- Изменение размеров изображения
+- Поддержка русского и английского языков
+- Пакетная обработка нескольких изображений
+- Скачивание всех конвертированных изображений в одном архиве
+
+## Технологии
+
+- Next.js 15
+- TypeScript
+- Tailwind CSS
+- React
+- i18next для интернационализации
+
+## Установка
 
 ```bash
+# Клонировать репозиторий
+git clone https://github.com/authweb/convert-images.git
+cd convert-images
+
+# Установить зависимости
+npm install
+
+# Запустить в режиме разработки
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Сборка
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+# Сборка проекта
+npm run build
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+# Запуск локальной версии после сборки
+npm start
+```
 
-## Learn More
+## Лицензия
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+MIT

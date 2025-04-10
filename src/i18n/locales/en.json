@@ -1,0 +1,63 @@
+{
+  "app": {
+    "title": "Image Converter",
+    "description": "Convert your images to different formats with ease. Simply drag and drop or select your images to get started.",
+    "dropzone": {
+      "select": "Select images or drop them here",
+      "formats": "Supported formats: JPEG, PNG, WebP",
+      "addMore": "Add more images"
+    },
+    "images": {
+      "total": "Total",
+      "selected": "Selected",
+      "selectAll": "Select all",
+      "clearSelection": "Clear selection",
+      "deleteAll": "Delete all"
+    },
+    "settings": {
+      "title": "Conversion Settings",
+      "format": "Format",
+      "quality": "Quality",
+      "dimensions": {
+        "title": "Dimensions",
+        "width": "Width",
+        "height": "Height",
+        "auto": "Auto",
+        "keepAspectRatio": "Keep aspect ratio",
+        "freeAspectRatio": "Free aspect ratio"
+      }
+    },
+    "actions": {
+      "convert": "Convert all",
+      "converting": "Converting...",
+      "delete": "Delete",
+      "download": "Download",
+      "downloadAll": "Download all",
+      "downloadZip": "Download as ZIP",
+      "downloading": "Downloading...",
+      "close": "Close"
+    },
+    "download": {
+      "readyToDownload": "ready to download",
+      "withErrors": "{{count}} with errors"
+    },
+    "notifications": {
+      "added": "Added {{count}} images",
+      "deleted": "Image deleted",
+      "deletedMultiple": "Deleted {{count}} images",
+      "allDeleted": "All images deleted",
+      "converted": "Image {{name}} successfully converted",
+      "conversionError": "Error converting {{name}}"
+    },
+    "validation": {
+      "fileSize": "File size exceeds 10MB",
+      "format": "Unsupported file format",
+      "dimensions": {
+        "tooSmall": "Image is too small (minimum {{width}}x{{height}}px)",
+        "tooBig": "Image is too large (maximum {{width}}x{{height}}px)",
+        "unusual": "Unusual image proportions",
+        "webSize": "Large resolution for web use"
+      }
+    }
+  }
+}
